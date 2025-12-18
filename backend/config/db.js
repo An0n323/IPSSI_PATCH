@@ -1,11 +1,10 @@
-require('dotenv').config(); // Charge les variables du fichier .env
+require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
-// Initialisation de Sequelize avec les variables sécurisées
 const sequelize = new Sequelize({
-  dialect: process.env.DB_DIALECT,
+  dialect: 'sqlite',
   storage: process.env.DB_STORAGE,
-  logging: false // Pour ne pas polluer la console avec les requêtes SQL
+  logging: false
 });
 
 module.exports = sequelize;

@@ -2,8 +2,8 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 
 const User = sequelize.define('User', {
-  username: { type: DataTypes.STRING, allowNull: false },
-  email: { type: DataTypes.STRING, unique: true }
-});
+  name: { type: DataTypes.STRING, allowNull: false },
+  password: { type: DataTypes.STRING, allowNull: false } // Idéalement à hacher avec bcrypt
+}, { timestamps: false });
 
 module.exports = User;
